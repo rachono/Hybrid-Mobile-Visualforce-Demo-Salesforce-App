@@ -2,6 +2,8 @@
   <script type="text/javascript" src="{!URLFOR($Resource.cordova, 'cordova.js')}" />
 
   <script>
+    // Add a callback function to be executed when the cordova libraries have finished
+    // loading.
     document.addEventListener('deviceready', function () {
       if (navigator.notification) { // Override default HTML alert with native dialog
           window.alert = function (message) {
@@ -16,6 +18,7 @@
     }, false);
   </script>
 
+  <!-- Instead of popping up a JS alert, a native notification will be invoked -->
   <apex:outputLink value="#" onclick="alert('Hello');">Native Notification</apex:outputLink>	
 
 </apex:page>
