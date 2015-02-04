@@ -1,0 +1,21 @@
+<apex:page showHeader="true" sidebar="true">
+  <script type="text/javascript" src="{!URLFOR($Resource.cordova, 'cordova.js')}" />
+
+  <script>
+    document.addEventListener('deviceready', function () {
+      if (navigator.notification) { // Override default HTML alert with native dialog
+          window.alert = function (message) {
+              navigator.notification.alert(
+                  message,    // message
+                  null,       // callback
+                  "Native Dialog", // title
+                  'OK'        // buttonName
+              );
+          };
+      }
+    }, false);
+  </script>
+
+  <apex:outputLink value="#" onclick="alert('Hello');">Native Notification</apex:outputLink>	
+
+</apex:page>
